@@ -1,143 +1,55 @@
-test = """noop
-addx 26
-addx -21
-addx 2
-addx 3
-noop
-noop
-addx 23
-addx -17
-addx -1
-noop
-noop
-addx 7
-noop
-addx 3
-addx 1
-noop
-noop
-addx 2
-noop
-addx 7
-noop
-addx -12
-addx 13
-addx -38
-addx 5
-addx 34
-addx -2
-addx -29
-addx 2
-addx 5
-addx 2
-addx 3
-addx -2
-addx -1
-addx 8
-addx 2
-addx 6
-addx -26
-addx 23
-addx -26
-addx 33
-addx 2
-addx -37
-addx -1
-addx 1
-noop
-noop
-noop
-addx 5
-addx 5
-addx 3
-addx -2
-addx 2
-addx 5
-addx 5
-noop
-noop
-addx -2
-addx 4
-noop
-noop
-noop
-addx 3
-noop
-noop
-addx 7
-addx -1
-addx -35
-addx -1
-addx 5
-addx 3
-noop
-addx 4
-noop
-noop
-noop
-noop
-noop
-addx 5
-addx 1
-noop
-noop
-noop
-addx -7
-addx 12
-addx 2
-addx 7
-noop
-addx -2
-noop
-noop
-addx 7
-addx 2
-addx -39
-noop
-noop
-addx 5
-addx 2
-addx -4
-addx 25
-addx -18
-addx 7
-noop
-addx -2
-addx 5
-addx 2
-addx 6
-addx -5
-addx 2
-addx -22
-addx 29
-addx -21
-addx -7
-addx 31
-addx 2
-noop
-addx -36
-addx 1
-addx 5
-noop
-addx 1
-addx 4
-addx 5
-noop
-noop
-noop
-addx 3
-noop
-addx -13
-addx 15
-noop
-addx 5
-noop
-addx 1
-noop
-addx 3
-addx 2
-addx 4
-addx 3
-noop
-addx -3
-noop"""
+test = """Monkey 0:
+  Starting items: 71, 86
+  Operation: new = old * 13
+  Test: divisible by 19
+    If true: throw to monkey 6
+    If false: throw to monkey 7
+
+Monkey 1:
+  Starting items: 66, 50, 90, 53, 88, 85
+  Operation: new = old + 3
+  Test: divisible by 2
+    If true: throw to monkey 5
+    If false: throw to monkey 4
+
+Monkey 2:
+  Starting items: 97, 54, 89, 62, 84, 80, 63
+  Operation: new = old + 6
+  Test: divisible by 13
+    If true: throw to monkey 4
+    If false: throw to monkey 1
+
+Monkey 3:
+  Starting items: 82, 97, 56, 92
+  Operation: new = old + 2
+  Test: divisible by 5
+    If true: throw to monkey 6
+    If false: throw to monkey 0
+
+Monkey 4:
+  Starting items: 50, 99, 67, 61, 86
+  Operation: new = old * old
+  Test: divisible by 7
+    If true: throw to monkey 5
+    If false: throw to monkey 3
+
+Monkey 5:
+  Starting items: 61, 66, 72, 55, 64, 53, 72, 63
+  Operation: new = old + 4
+  Test: divisible by 11
+    If true: throw to monkey 3
+    If false: throw to monkey 0
+
+Monkey 6:
+  Starting items: 59, 79, 63
+  Operation: new = old * 7
+  Test: divisible by 17
+    If true: throw to monkey 2
+    If false: throw to monkey 7
+
+Monkey 7:
+  Starting items: 55
+  Operation: new = old + 7
+  Test: divisible by 3
+    If true: throw to monkey 2
+    If false: throw to monkey 1"""
