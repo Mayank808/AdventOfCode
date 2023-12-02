@@ -45,7 +45,10 @@ class Solution:
     # Star 2
     """
     Notes:
-
+        Builds on last problem except in this one we need to ensure all games are valid,
+        by finding the minimum number of blocks needed to validate the game.
+        Simply loop through blocks grab and find max number of each colour.
+        Compute power on the resulting array. 
     """
 
     def power(self, min_values: dict[str, int]):
@@ -62,7 +65,7 @@ class Solution:
             min_possible = {}
             for grab in grabs:
                 for block in grab:
-                    if not block[1] in min_possible:
+                    if not block[1] in min_possible: # cleaner way to not have to init all colour values to float('inf')
                         min_possible[block[1]] = int(block[0])
                         continue
                     min_possible[block[1]] = max(int(block[0]), min_possible[block[1]])
