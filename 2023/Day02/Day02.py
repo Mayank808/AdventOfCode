@@ -53,6 +53,7 @@ class Solution:
 
     def power(self, min_values: dict[str, int]):
         res = 1
+
         for _, val in min_values.items():
             res *= val
         return res
@@ -65,7 +66,9 @@ class Solution:
             min_possible = {}
             for grab in grabs:
                 for block in grab:
-                    if not block[1] in min_possible: # cleaner way to not have to init all colour values to float('inf')
+                    if (
+                        not block[1] in min_possible
+                    ):  # cleaner way to not have to init all colour values to float('inf')
                         min_possible[block[1]] = int(block[0])
                         continue
                     min_possible[block[1]] = max(int(block[0]), min_possible[block[1]])
