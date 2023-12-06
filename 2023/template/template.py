@@ -18,7 +18,7 @@ class Solution:
     Notes:
 
     """
-    
+
     def star_two(self, input):
         res = 0
 
@@ -31,7 +31,7 @@ def main():
     solution = Solution()
     solution.star_one("")
     solution.star_two("")
-    
+
     print("\n\nMain Solution:")
     sol_one = solution.star_one(star_one)
     sol_two = solution.star_two(star_two)
