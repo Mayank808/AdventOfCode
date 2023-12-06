@@ -1,4 +1,4 @@
-from test import star_one, star_two
+from test import star_one, star_two, example
 
 
 class Solution:
@@ -7,7 +7,12 @@ class Solution:
     Notes:
     """
 
+    def parse_input(self, input):
+        print(f"Use if required {input}")
+
     def star_one(self, input: str):
+        if not input:
+            return
         res = 0
 
         print(f"Star 1: {res}")
@@ -20,6 +25,8 @@ class Solution:
     """
 
     def star_two(self, input):
+        if not input:
+            return
         res = 0
 
         print(f"Star 2: {res}")
@@ -29,8 +36,8 @@ class Solution:
 def main():
     print("Tests:")
     solution = Solution()
-    solution.star_one("")
-    solution.star_two("")
+    solution.star_one(example)
+    solution.star_two(example)
 
     print("\n\nMain Solution:")
     sol_one = solution.star_one(star_one)
