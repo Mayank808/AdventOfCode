@@ -15,8 +15,12 @@ class Solution:
 
         want to find lower bound and upperbound on h to allow distance traveled to be > d
         can use binary search to find lower and upper bound on time such that that distance traveled > d
-        
+
         could also brute force the quadratic but binary search is optimal solution
+        
+        other solutions 
+        - quadratic formula (have to still compute sqrt)
+        - brute force the quadratic 
     """
 
     def star_one(self, input: str):
@@ -27,7 +31,7 @@ class Solution:
 
         for time, distance in zip(times, distances):
             left, right = 0, time
-            
+
             # finding min
             while left < right:
                 mid_time_held = (left + right) // 2
@@ -40,19 +44,20 @@ class Solution:
 
             min_time = left
 
-            left, right = 0, time
-
+            # not needed relize that a quadratic is symmetric as such max_time = t - min_time
             # find max
-            while left < right:
-                mid_time_held = (left + right) // 2
-                distance_travelled = (time - mid_time_held) * mid_time_held
-                if distance_travelled >= distance:
-                    left = mid_time_held + 1
-                else:
-                    right = mid_time_held
 
-            max_time = left
+            # left, right = 0, time
+            # while left < right:
+            #     mid_time_held = (left + right) // 2
+            #     distance_travelled = (time - mid_time_held) * mid_time_held
+            #     if distance_travelled >= distance:
+            #         left = mid_time_held + 1
+            #     else:
+            #         right = mid_time_held
+            # max_time = left
 
+            max_time = time - min_time + 1
             res *= max_time - min_time
             # print("min max:", min_time, max_time)
             # print(res)
@@ -72,8 +77,8 @@ class Solution:
     def star_two(self, input):
         res = 0
         [times, distances] = input.splitlines()
-        
-        #only difference between one and two is how we handle input
+
+        # only difference between one and two is how we handle input
         time = int("".join(times.split(":")[1].split()))
         distance = int("".join(distances.split(":")[1].split()))
         # print(time, distance)
@@ -90,20 +95,10 @@ class Solution:
                 left = mid_time_held + 1
 
         min_time = left
+        max_time = time - min_time + 1
 
-        left, right = 0, time
-
-        # find max
-        while left < right:
-            mid_time_held = (left + right) // 2
-            distance_travelled = (time - mid_time_held) * mid_time_held
-            if distance_travelled >= distance:
-                left = mid_time_held + 1
-            else:
-                right = mid_time_held
-
-        max_time = left
         res = max_time - min_time
+
         print(f"Star 2: {res}")
         return res
 
