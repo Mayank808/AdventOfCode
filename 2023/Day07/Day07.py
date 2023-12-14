@@ -32,6 +32,22 @@ class Solution:
     # Star 1
     """
     Notes:
+        Initially thougth i could use a deque to handle comparisons with tuples for me
+            Tuples hold (hand_type, hand, bid)
+        hence it would first find the smallest hand based on hand_type if those are same would sort by smalled hand (string comparison)
+        Doesnt work since T > K, A, Q, J hence cant string compare
+        Could create custom min heap class which i pass in a comparison lambda function to determine correct order
+        This is extra work for something that can use a simple deque and insert in position be just comparing
+        Need to create a get hand function that returns the type of hand we have.
+        Since everything relise on pairs we can use Counter to simplify and determin which hand user has simply based on max value in counter
+        and the length of the counter
+
+        Assumptions:
+            Assumed no dupe hands (dont know how to handle)
+
+
+        OPTIMIZATION:
+            CAN ACTUALLY CREATE A LETTER MAPPING SUCH THAT WE CONVERT K A Q J to letters in proper increasing order. Hence a deque can be used for this problem.
     """
 
     def parse_input(self, input):
@@ -131,7 +147,8 @@ class Solution:
     # Star 2
     """
     Notes:
-
+        Simple extention of part 1 updated how we handle get hand since hands can be upgraded based on the number of jokers
+        Same methodlogy except we account for hand upgrades if jokers exist in counter and J's are now valued at 1. 
     """
 
     def star_two(self, input):
